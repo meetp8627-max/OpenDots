@@ -216,7 +216,7 @@ export function createApp({
       : c.json({ error: 'Memory not found.' }, 404),
   );
   app.onError((error, c) => {
-    console.error('API request failed:', error.name);
+    console.error('API request failed:', error.name, error.message, error.stack);
     return c.json(
       {
         error:
@@ -227,3 +227,4 @@ export function createApp({
   });
   return app;
 }
+
