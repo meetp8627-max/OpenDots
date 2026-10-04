@@ -23,5 +23,5 @@ RUN npm ci --omit=dev && mkdir -p /data && chown node:node /data
 COPY --from=build /app/dist ./dist
 USER node
 EXPOSE 4310
-CMD ["node", "dist/server/server/index.js"]
+CMD ["node", "dist/server/index.js"]
 
